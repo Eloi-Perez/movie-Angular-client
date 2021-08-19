@@ -13,6 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UserProfileComponent implements OnInit {
     user: any = {};
+    sameUser: boolean = false;
     constructor(
         public dialog: MatDialog,
         public fetchApiData: FetchApiDataService,
@@ -23,9 +24,11 @@ export class UserProfileComponent implements OnInit {
         const routeParams = this.route.snapshot.paramMap;
         const userFromRoute = routeParams.get('user');
         this.getUser(userFromRoute);
+        const localUser: any = localStorage.getItem('user');
+        if (localUser == userFromRoute) { this.sameUser = true}
     }
 
-    getUser(userParam: any): void { //can be call the same?
+    getUser(userParam: any): void {
         this.fetchApiData.getUser(userParam).subscribe((resp: any) => {
             this.user = resp;
             console.log(this.user);

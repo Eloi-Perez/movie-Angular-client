@@ -31,18 +31,21 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
-    openDirectorDialog(): void {
+    openDirectorDialog(data: object): void {
         this.dialog.open(DirectorCardComponent, {
+            data,
             width: '280px'
         });
     }
-    openGenreDialog(): void {
+    openGenreDialog(data: object): void {
         this.dialog.open(GenreCardComponent, {
+            data,
             width: '280px'
         });
     }
-    openDescriptionDialog(): void {
+    openDescriptionDialog(data: object): void {
         this.dialog.open(DescriptionCardComponent, {
+            data,
             width: '280px'
         });
     }

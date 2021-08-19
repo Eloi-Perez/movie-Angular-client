@@ -1,1 +1,4 @@
-<p>director-card works!</p>
+<h3>{{data.Name}}</h3>
+<p>{{data.Bio}}</p>
+<p *ngIf="data.BirthDate">Born: {{data.BirthDate | date:'longDate'}}</p>
+<p *ngIf="data.DeathDate">Died: {{data.DeathDate | date:'longDate'}}</p>

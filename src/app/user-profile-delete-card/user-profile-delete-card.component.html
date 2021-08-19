@@ -1,1 +1,19 @@
-<p>user-profile-delete-card works!</p>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Delete your account</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input matInput [(ngModel)]="userData.Password" type="password" placeholder="Password"
+                    name="Password">
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <p>This can not be undone</p>
+    <mat-card-actions>
+        <button mat-raised-button (click)="delUser()" color="warn">
+            Delete
+        </button>
+    </mat-card-actions>
+</mat-card>

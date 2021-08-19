@@ -11,10 +11,10 @@
             </mat-card-actions>
         </mat-card>
     </div>
-    <button mat-raised-button (click)="openEditDialog()" color="primary" style="width:150px;">
+    <button *ngIf="sameUser" mat-raised-button (click)="openEditDialog()" color="primary" style="width:150px;">
         Edit Profile
     </button>
-    <button mat-raised-button (click)="openDeleteDialog()" color="warn" style="width:150px;">
+    <button *ngIf="sameUser" mat-raised-button (click)="openDeleteDialog()" color="warn" style="width:150px;">
         Delete account
     </button>
 </div>

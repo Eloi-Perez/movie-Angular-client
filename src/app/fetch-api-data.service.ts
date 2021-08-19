@@ -40,30 +40,30 @@ export class FetchApiDataService {
             catchError(this.handleError)
         );
     }
-    public getGenre(): Observable<any> {
-        const token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'genres/:Genre', {
-            headers: new HttpHeaders(
-                {
-                    Authorization: 'Bearer ' + token,
-                })
-        }).pipe(
-            map(this.extractResponseData),
-            catchError(this.handleError)
-        );
-    }
-    public getDirector(): Observable<any> {
-        const token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'directors/:Director', {
-            headers: new HttpHeaders(
-                {
-                    Authorization: 'Bearer ' + token,
-                })
-        }).pipe(
-            map(this.extractResponseData),
-            catchError(this.handleError)
-        );
-    }
+    // public getGenre(): Observable<any> {
+    //     const token = localStorage.getItem('token');
+    //     return this.http.get(apiUrl + 'genres/:Genre', {
+    //         headers: new HttpHeaders(
+    //             {
+    //                 Authorization: 'Bearer ' + token,
+    //             })
+    //     }).pipe(
+    //         map(this.extractResponseData),
+    //         catchError(this.handleError)
+    //     );
+    // }
+    // public getDirector(): Observable<any> {
+    //     const token = localStorage.getItem('token');
+    //     return this.http.get(apiUrl + 'directors/:Director', {
+    //         headers: new HttpHeaders(
+    //             {
+    //                 Authorization: 'Bearer ' + token,
+    //             })
+    //     }).pipe(
+    //         map(this.extractResponseData),
+    //         catchError(this.handleError)
+    //     );
+    // }
 
 
     // Making the api call for the user endpoint

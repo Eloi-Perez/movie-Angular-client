@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-import { FetchApiDataService } from '../fetch-api-data.service';
 
 @Component({
     selector: 'app-director-card',
@@ -9,21 +8,13 @@ import { FetchApiDataService } from '../fetch-api-data.service';
     styleUrls: ['./director-card.component.scss']
 })
 export class DirectorCardComponent implements OnInit {
-    director: any = []
+
     constructor(
-        public fetchApiData: FetchApiDataService,
-        public dialogRef: MatDialogRef<DirectorCardComponent>,
+        @Inject(MAT_DIALOG_DATA) public data: { Name: string, Bio: string, BirthDate?: Date, DeathDate?: Date}
     ) { }
 
     ngOnInit(): void {
     }
 
-    // getDirector(film: any): void {
-    //     this.fetchApiData.getDirector(film).subscribe((resp: any) => {
-    //         this.director = resp;
-    //         console.log(this.director);
-    //         return this.director;
-    //     });
-    // }
 
 }
