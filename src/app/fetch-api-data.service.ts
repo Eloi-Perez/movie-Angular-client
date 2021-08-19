@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://movie-api2.herokuapp.com/';
+const apiUrl = 'http://localhost:8080/'; //'https://movie-api2.herokuapp.com/';
 @Injectable({
     providedIn: 'root'
 })
@@ -80,9 +80,9 @@ export class FetchApiDataService {
             catchError(this.handleError)
         );
     }
-    public getUser(): Observable<any> {
+    public getUser(user: string): Observable<any> {
         const token = localStorage.getItem('token');
-        return this.http.get(apiUrl + 'users', {
+        return this.http.get(`${apiUrl}users/${user}`, {
             headers: new HttpHeaders(
                 {
                     Authorization: 'Bearer ' + token,
@@ -99,7 +99,6 @@ export class FetchApiDataService {
         );
     }
     public deleteUser(userDetails: any): Observable<any> {
-        const token = localStorage.getItem('token');
         return this.http.delete(apiUrl + 'users', userDetails).pipe(
             catchError(this.handleError)
         );
