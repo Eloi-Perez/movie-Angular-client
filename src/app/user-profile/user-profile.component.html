@@ -1,15 +1,18 @@
 <div style="display: flex; flex-direction: column;">
     <h1>Profile: {{user.Username}}</h1>
     <div style="display: flex; flex-direction: row;">
-        <mat-card *ngFor="let movie of user.myMovies;" style="flex: 1 1 auto;">
-            <mat-card-header>
-                <mat-card-title>{{movie.Movie.Title}}</mat-card-title>
-            </mat-card-header>
-            <img src="http://localhost:8080{{movie.Movie.ImagePath}}" alt={{movie.Movie.Title}} height="400px" />
-            <mat-card-actions>
-                <mat-icon>favorite_border</mat-icon>
-            </mat-card-actions>
-        </mat-card>
+        <div *ngFor="let movie of user.myMovies;" style="flex: 1 1 auto;">
+            <mat-card *ngIf="movie.Favorite == true">
+                <mat-card-header>
+                    <mat-card-title>{{movie.Movie.Title}}</mat-card-title>
+                </mat-card-header>
+                <img src="http://localhost:8080{{movie.Movie.ImagePath}}" alt={{movie.Movie.Title}} height="400px" />
+                <mat-card-actions>
+                    <mat-icon *ngIf="!movie.Favorite" (click)="changeFav(movie.Movie.Title, true)">favorite_border</mat-icon>
+                    <mat-icon *ngIf="movie.Favorite" (click)="changeFav(movie.Movie.Title, false)">favorite</mat-icon>
+                </mat-card-actions>
+            </mat-card>
+        </div>
     </div>
     <button *ngIf="sameUser" mat-raised-button (click)="openEditDialog()" color="primary" style="width:150px;">
         Edit Profile

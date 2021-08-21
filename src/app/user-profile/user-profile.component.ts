@@ -36,6 +36,16 @@ export class UserProfileComponent implements OnInit {
         });
     }
 
+    changeFav(title: string, fav: boolean): void {
+        const data = {Movie: title, Favorite: fav}
+        this.fetchApiData.updateMyMovies(data).subscribe((resp: any) => {
+            this.user = resp;
+            console.log(this.user);
+            return this.user;
+        });
+    }
+
+
     openEditDialog(): void {
         this.dialog.open(UserProfileEditCardComponent, {
             width: '280px'

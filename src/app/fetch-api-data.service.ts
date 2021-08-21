@@ -107,8 +107,9 @@ export class FetchApiDataService {
 
     //myMovies (favourites)
     public updateMyMovies(details: any): Observable<any> {
+        const user = localStorage.getItem('user');
         const token = localStorage.getItem('token');
-        return this.http.put(apiUrl + 'users/:Username/myMovies', details, {
+        return this.http.put(apiUrl + 'users/' + user + '/myMovies', details, {
             headers: new HttpHeaders(
                 {
                     Authorization: 'Bearer ' + token,
