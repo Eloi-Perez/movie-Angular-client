@@ -1,8 +1,8 @@
 <div style="display: flex; flex-direction: column;">
     <h1>Profile: {{user.Username}}</h1>
     <div style="display: flex; flex-direction: row;">
-        <div *ngFor="let movie of user.myMovies;" style="flex: 1 1 auto;">
-            <mat-card *ngIf="movie.Favorite == true">
+        <div *ngFor="let movie of user.myMovies;" >
+            <mat-card *ngIf="movie.Favorite == true" style="flex: 1 1 auto;">
                 <mat-card-header>
                     <mat-card-title>{{movie.Movie.Title}}</mat-card-title>
                 </mat-card-header>
