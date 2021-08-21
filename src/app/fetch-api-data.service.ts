@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 //Declaring the api url that will provide data for the client app
-const apiUrl = 'https://movie-api2.herokuapp.com/'; // 'http://localhost:8080'
+const apiUrl = 'https://movie-api2.herokuapp.com'; // 'http://localhost:8080'
 @Injectable({
     providedIn: 'root'
 })
