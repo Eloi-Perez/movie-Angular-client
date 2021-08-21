@@ -8,6 +8,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Eloi-Perez/movie-Angular-client.git"
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
