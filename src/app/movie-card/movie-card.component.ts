@@ -15,6 +15,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class MovieCardComponent implements OnInit {
     movies: any[] = [];
     user: { Username: string, myMovies: any[] } = { Username: '', myMovies: [] };
+    apiUrl = this.fetchApiData.apiUrl;
     constructor(
         public fetchApiData: FetchApiDataService,
         public dialog: MatDialog,

@@ -14,6 +14,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class UserProfileComponent implements OnInit {
     user: any = {};
     sameUser: boolean = false;
+    apiUrl = this.fetchApiData.apiUrl;
     constructor(
         public dialog: MatDialog,
         public fetchApiData: FetchApiDataService,
