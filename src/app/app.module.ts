@@ -17,6 +17,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 import { UserRegistrationFormComponent } from './user-registration-form/user-registration-form.component';
 import { UserLoginFormComponent } from './user-login-form/user-login-form.component';
@@ -28,6 +29,7 @@ import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DescriptionCardComponent } from './description-card/description-card.component';
 import { UserProfileEditCardComponent } from './user-profile-edit-card/user-profile-edit-card.component';
 import { UserProfileDeleteCardComponent } from './user-profile-delete-card/user-profile-delete-card.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     GenreCardComponent,
     DescriptionCardComponent,
     UserProfileEditCardComponent,
-    UserProfileDeleteCardComponent
+    UserProfileDeleteCardComponent,
+    NavbarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -63,7 +66,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatDialogModule,
     MatSnackBarModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
