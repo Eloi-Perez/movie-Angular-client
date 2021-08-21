@@ -15,6 +15,7 @@ export class UserProfileComponent implements OnInit {
     user: any = {};
     sameUser: boolean = false;
     apiUrl = this.fetchApiData.apiUrl;
+    testUser: boolean = false;
     constructor(
         public dialog: MatDialog,
         public fetchApiData: FetchApiDataService,
@@ -26,7 +27,8 @@ export class UserProfileComponent implements OnInit {
         const userFromRoute = routeParams.get('user');
         this.getUser(userFromRoute);
         const localUser: any = localStorage.getItem('user');
-        if (localUser == userFromRoute) { this.sameUser = true}
+        if (localUser == userFromRoute) { this.sameUser = true }
+        if (localUser == 'testUser') { this.sameUser = false; this.testUser = true }
     }
 
     getUser(userParam: any): void {
@@ -38,7 +40,7 @@ export class UserProfileComponent implements OnInit {
     }
 
     changeFav(title: string, fav: boolean): void {
-        const data = {Movie: title, Favorite: fav}
+        const data = { Movie: title, Favorite: fav }
         this.fetchApiData.updateMyMovies(data).subscribe((resp: any) => {
             this.user = resp;
             console.log(this.user);

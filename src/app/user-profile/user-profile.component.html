@@ -20,4 +20,10 @@
     <button *ngIf="sameUser" mat-raised-button (click)="openDeleteDialog()" color="warn" style="width:150px;">
         Delete account
     </button>
+    <button *ngIf="testUser" mat-raised-button color="primary" style="width:150px;">
+        <del>Edit Profile</del>
+    </button>
+    <button *ngIf="testUser" mat-raised-button color="warn" style="width:150px;">
+        <del>Delete account</del>
+    </button>
 </div>
