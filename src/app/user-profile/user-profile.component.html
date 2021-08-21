@@ -6,7 +6,7 @@
                 <mat-card-header>
                     <mat-card-title>{{movie.Movie.Title}}</mat-card-title>
                 </mat-card-header>
-                <img src="http://localhost:8080{{movie.Movie.ImagePath}}" alt={{movie.Movie.Title}} height="400px" />
+                <img src="{{fetchApiData.apiUrl}}{{movie.Movie.ImagePath}}" alt={{movie.Movie.Title}} height="400px" />
                 <mat-card-actions>
                     <mat-icon *ngIf="!movie.Favorite" (click)="changeFav(movie.Movie.Title, true)">favorite_border</mat-icon>
                     <mat-icon *ngIf="movie.Favorite" (click)="changeFav(movie.Movie.Title, false)">favorite</mat-icon>
