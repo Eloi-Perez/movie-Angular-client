@@ -2,7 +2,7 @@
 
 This is my first TypeScript and Angular proyect, a movies database, using as a server side [my movie_api](https://github.com/Eloi-Perez/movie_api "my movie_api")
 
-Hosted in [GitHub Pages](https://eloi-perez.github.io/movie-Angular-client "GitHub Pages")
+Hosted on [GitHub Pages](https://eloi-perez.github.io/movie-Angular-client "GitHub Pages")
 
 ![web image](https://github.com/Eloi-Perez/movie-Angular-client/blob/assets/movie-Angular-client.jpg)
 
