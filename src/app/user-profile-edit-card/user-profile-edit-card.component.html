@@ -5,17 +5,17 @@
     <mat-card-content>
         <form>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.Password" placeholder="password" type="text" name="Username"
+                <input matInput [(ngModel)]="userData.Password" type="password" placeholder="old Password"  name="Password"
                     required>
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.NewUsername" placeholder="new username" type="text" name="Username">
+                <input matInput [(ngModel)]="userData.NewUsername" type="text" placeholder="new Username" name="NewUsername">
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.NewPassword" type="new password" placeholder="Password" name="Password">
+                <input matInput [(ngModel)]="userData.NewPassword" type="password" placeholder="new Password" name="NewPassword">
             </mat-form-field>
             <mat-form-field>
-                <input matInput [(ngModel)]="userData.NewEmail" type="new email" placeholder="Email" name="Email">
+                <input matInput [(ngModel)]="userData.NewEmail" type="email" placeholder="new Email" name="NewEmail">
             </mat-form-field>
             <mat-form-field>
                 <input matInput [(ngModel)]="userData.Birthday" type="date" placeholder="Birthday" name="Birthday">
