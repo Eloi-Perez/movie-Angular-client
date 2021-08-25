@@ -1,7 +1,9 @@
-<mat-nav-list>
-    <a mat-list-item routerLink="/movies" routerLinkActive="active">Movies </a>
-    <a mat-list-item routerLink="/profile/{{localUser}}" routerLinkActive="active">Profile </a>
-</mat-nav-list>
-<mat-action-list>
-    <button mat-list-item (click)="logoff()"> Log Off </button>
-</mat-action-list>
+<div class="nav-bar">
+    <mat-nav-list>
+        <a mat-raised-button routerLink="/movies" routerLinkActive="active">Movies </a>
+        <a mat-raised-button routerLink="/profile/{{localUser}}" routerLinkActive="active">Profile </a>
+    </mat-nav-list>
+    <mat-action-list>
+        <button mat-raised-button (click)="logoff()"> log out </button>
+    </mat-action-list>
+</div>

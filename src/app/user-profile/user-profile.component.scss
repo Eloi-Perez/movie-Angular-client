@@ -1,3 +1,23 @@
 mat-icon {
     cursor: pointer;
 }
+.main-profile {
+    display: flex;
+    flex-direction: column;
+    margin: 1em;
+}
+// .title {
+//     margin-left: 1em;
+// }
+.movie-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+}
+
+.buttons-profile {
+    margin-top: 1em;
+    & > button:not(:first-of-type) {
+        margin-left: 1em;
+    }
+}

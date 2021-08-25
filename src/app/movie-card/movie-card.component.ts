@@ -27,7 +27,14 @@ export class MovieCardComponent implements OnInit {
 
     getMovies(): void {
         this.fetchApiData.getAllMovies().subscribe((resp: any) => {
-            this.movies = resp;
+            const sorted = resp.sort((a: any, b: any) => {
+                let compA = a.Title.toUpperCase();
+                let compB = b.Title.toUpperCase();
+                if (compA < compB) { return -1 }
+                if (compA > compB) { return 1 }
+                return 0;
+            })
+            this.movies = sorted;
             // Load next function
             this.getUser();
         });
@@ -43,8 +50,8 @@ export class MovieCardComponent implements OnInit {
     }
 
     merge(u: { Username: string, myMovies: any[] }): void {
-        console.log(u)
-        console.log(this.movies);
+        // console.log(u)
+        // console.log(this.movies);
         u.myMovies.forEach(sourceElement => {
             let targetElement = this.movies.find(targetElement => {
                 return sourceElement.Movie.Title === targetElement.Title;
@@ -66,19 +73,19 @@ export class MovieCardComponent implements OnInit {
     openDirectorDialog(data: object): void {
         this.dialog.open(DirectorCardComponent, {
             data,
-            width: '280px'
+            width: '380px'
         });
     }
     openGenreDialog(data: object): void {
         this.dialog.open(GenreCardComponent, {
             data,
-            width: '280px'
+            width: '380px'
         });
     }
     openDescriptionDialog(data: object): void {
         this.dialog.open(DescriptionCardComponent, {
             data,
-            width: '280px'
+            width: '380px'
         });
     }
 }
