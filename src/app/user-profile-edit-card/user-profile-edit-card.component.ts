@@ -20,6 +20,11 @@ export class UserProfileEditCardComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    /**
+    * Update user info
+    * Send this.userData
+    * @param this.userData
+    */
     editUser(): void { // add are you sure msg
         const localUser: any = localStorage.getItem('user');
         const data: any = this.userData;

@@ -3,17 +3,17 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 @Component({
-  selector: 'app-description-card',
-  templateUrl: './description-card.component.html',
-  styleUrls: ['./description-card.component.scss']
+    selector: 'app-description-card',
+    templateUrl: './description-card.component.html',
+    styleUrls: ['./description-card.component.scss']
 })
 export class DescriptionCardComponent implements OnInit {
 
-  constructor(
-    @Inject(MAT_DIALOG_DATA) public data: string
-  ) { }
+    constructor(
+        @Inject(MAT_DIALOG_DATA) public data: string
+    ) { }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+    }
 
 }

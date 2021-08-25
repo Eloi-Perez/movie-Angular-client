@@ -31,6 +31,10 @@ export class UserProfileComponent implements OnInit {
         if (localUser == 'testUser') { this.sameUser = false; this.testUser = true }
     }
 
+    /**
+    * Get User info
+    * @param userParam
+    */
     getUser(userParam: any): void {
         this.fetchApiData.getUser(userParam).subscribe((resp: any) => {
             this.user = resp;
@@ -39,6 +43,11 @@ export class UserProfileComponent implements OnInit {
         });
     }
 
+    /**
+    * Favourite film
+    * @param title
+    * @param fav
+    */
     changeFav(title: string, fav: boolean): void {
         const data = { Movie: title, Favorite: fav }
         this.fetchApiData.updateMyMovies(data).subscribe((resp: any) => {
@@ -48,12 +57,17 @@ export class UserProfileComponent implements OnInit {
         });
     }
 
-
+    /**
+    * Open User-Profile-Edit-Card Component
+    */
     openEditDialog(): void {
         this.dialog.open(UserProfileEditCardComponent, {
             width: '280px'
         });
     }
+    /**
+    * Open User-Profile-Delete-Card Component
+    */
     openDeleteDialog(): void {
         this.dialog.open(UserProfileDeleteCardComponent, {
             width: '280px'

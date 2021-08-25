@@ -16,14 +16,26 @@ export class WelcomePageComponent implements OnInit {
         public router: Router
     ) { }
     ngOnInit(): void {
+        this.redirectLogged()
+    }
+    /**
+    * Redirect to /movies if user logged in
+    */
+    redirectLogged(): void {
         const localUser = localStorage.getItem('user');
         localUser && this.router.navigate(['movies']);
     }
+    /**
+    * Open user registration dialog
+    */
     openUserRegistrationDialog(): void {
         this.dialog.open(UserRegistrationFormComponent, {
             width: '280px'
         });
     }
+    /**
+    * Open user login dialog
+    */
     openUserLoginDialog(): void {
         this.dialog.open(UserLoginFormComponent, {
             width: '280px'

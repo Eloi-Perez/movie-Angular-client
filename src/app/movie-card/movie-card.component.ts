@@ -25,6 +25,10 @@ export class MovieCardComponent implements OnInit {
         this.getMovies();
     }
 
+    /**
+    * Get all movies & store in this.movies
+    * load this.getUser()
+    */
     getMovies(): void {
         this.fetchApiData.getAllMovies().subscribe((resp: any) => {
             const sorted = resp.sort((a: any, b: any) => {
@@ -40,6 +44,10 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
+    /**
+    * Get User info & store in this.user
+    * load this.merge()
+    */
     getUser(): void {
         const localUser: any = localStorage.getItem('user');
         this.fetchApiData.getUser(localUser).subscribe((resp: any) => {
@@ -49,10 +57,12 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
-    merge(u: { Username: string, myMovies: any[] }): void {
-        // console.log(u)
-        // console.log(this.movies);
-        u.myMovies.forEach(sourceElement => {
+    /**
+    * Merge User favourites movies into this.movies object
+    * @param userResponse from this.getUser()
+    */
+    merge(userResponse: { Username: string, myMovies: any[] }): void {
+        userResponse.myMovies.forEach(sourceElement => {
             let targetElement = this.movies.find(targetElement => {
                 return sourceElement.Movie.Title === targetElement.Title;
             })
@@ -60,6 +70,11 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
+    /**
+    * Favourite film
+    * @param title
+    * @param fav
+    */
     changeFav(title: string, fav: boolean): void {
         const data = { Movie: title, Favorite: fav }
         this.fetchApiData.updateMyMovies(data).subscribe((resp: any) => {
@@ -70,18 +85,27 @@ export class MovieCardComponent implements OnInit {
         });
     }
 
+    /**
+    * Open Director-Card Component
+    */
     openDirectorDialog(data: object): void {
         this.dialog.open(DirectorCardComponent, {
             data,
             width: '380px'
         });
     }
+    /**
+    * Open Genre-Card Component
+    */
     openGenreDialog(data: object): void {
         this.dialog.open(GenreCardComponent, {
             data,
             width: '380px'
         });
     }
+    /**
+    * Open Description-Card Component
+    */
     openDescriptionDialog(data: object): void {
         this.dialog.open(DescriptionCardComponent, {
             data,

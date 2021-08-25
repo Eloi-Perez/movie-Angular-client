@@ -20,6 +20,12 @@ export class UserProfileDeleteCardComponent implements OnInit {
     ngOnInit(): void {
     }
 
+    /**
+    * Delete User
+    * Send this.userData
+    * Clear localStorage
+    * @param this.userData
+    */
     delUser(): void { // add are you sure msg
         const localUser: any = localStorage.getItem('user');
         const data: any = this.userData;
