@@ -1,6 +1,6 @@
 # MovieAngularClient
 
-This is my first TypeScript and Angular proyect, a movies database, using as a server side [my movie_api](https://github.com/Eloi-Perez/movie_api "my movie_api")
+This is my first TypeScript and Angular proyect, a movies database, using in the server side [my movie_api](https://github.com/Eloi-Perez/movie_api "my movie_api")
 
 Hosted on [GitHub Pages](https://eloi-perez.github.io/movie-Angular-client "GitHub Pages")
 
