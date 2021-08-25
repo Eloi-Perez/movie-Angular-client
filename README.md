@@ -12,6 +12,7 @@ Hosted in [GitHub Pages](https://eloi-perez.github.io/movie-Angular-client "GitH
 * Angular
 * RxJS
 * @angular/material
+* SCSS
 * TypeDoc
 
 
