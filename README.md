@@ -1,6 +1,6 @@
 # MovieAngularClient
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+![web image](https://eloiperez.com/external_assets/movie-Angular-client.jpg)
 
 ## Development server
 
