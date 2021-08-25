@@ -1,6 +1,6 @@
 # MovieAngularClient
 
-![web image](https://eloiperez.com/external_assets/movie-Angular-client.jpg)
+![web image](https://github.com/Eloi-Perez/movie-Angular-client/blob/assets/movie-Angular-client.jpg)
 
 ## Development server
 
